@@ -35,6 +35,11 @@
     <input type="text" name="doored" id="doored" />
 </section>
 
+<section>
+    <h2>Inspect</h2>
+    <button type="button" onclick="DoInspect()">Go</button>
+</section>
+
 <script>
     function DoShuffle()
     {
@@ -93,6 +98,16 @@
         });
         resultDom.value = result.door + ' ' + result.curse;
         console.log('ending');
+    }
+
+    function DoInspect() {
+        var debug = new Room(1, "Debug");
+        var trouble = new Room(2, "Troubleshot");
+        var javascript = new Room(3, "Javascript");
+        var test = new Room(4, "Testing");
+        var rooms = [debug, trouble, javascript, test];
+        var formacion = { "name" : "Microsoft", "curses" : rooms };
+        console.dir(formacion);
     }
 
     String.prototype.shuffle = function () {
