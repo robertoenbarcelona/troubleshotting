@@ -1,0 +1,116 @@
+﻿
+@{
+    ViewBag.Title = "View";
+}
+
+<h1>Some test</h1>
+
+<section>
+    <h2>Shuffle</h2>
+    <label for="sentence">Insertar una frase</label>
+    <input type="text" name="sentence" id="sentence" />
+    <br />
+    <button type="button" onclick="DoShuffle()">Go</button>
+    <label for="shuffled">Resultado</label>
+    <input type="text" name="shuffled" id="shuffled" />
+</section>
+
+<section>
+    <h2>People</h2>
+    <label for="index">Insertar un numero</label>
+    <input type="number" name="index" id="index" />
+    <br />
+    <button type="button" onclick="DoSearch()">Go</button>
+    <label for="indexed">Resultado</label>
+    <input type="text" name="indexed" id="indexed" />
+</section>
+
+<section>
+    <h2>Rooms</h2>
+    <label for="door">Insertar un numero</label>
+    <input type="number" name="door" id="door" />
+    <br />
+    <button type="button" onclick="DoRoom()">Go</button>
+    <label for="doored">Resultado</label>
+    <input type="text" name="doored" id="doored" />
+</section>
+
+<script>
+    function DoShuffle()
+    {
+        console.log('starting');
+        debugger;
+        var sentenceDom = document.getElementById("sentence");
+        var sentence = sentenceDom.value;
+        console.assert('sentence is not null', sentence != null);
+        console.assert('sentence is not null', sentence.length != 0);
+        var resultDom = document.getElementById("shuffled");
+        resultDom.value = sentence.shuffle();
+        console.log('ending');
+    }
+
+    function DoSearch() {
+        var rooms = [[1, "John", "Smith"], [2, "Jane", "Doe"], [3, "Emily", "Jones"], [4, "Pepe", "Manolito"]];
+        console.table(people);
+
+        console.log('starting');
+        var inputDom = document.getElementById("index");
+        var input = inputDom.value;
+        console.assert('input is not 0', input != 0);
+        var resultDom = document.getElementById("indexed");
+        var result = null;
+        people.forEach(function (entry) {
+            console.log(entry);
+            if (entry[0] == input)
+            {
+                result = entry;
+            }
+        });
+
+        resultDom.value = result[1] + ' ' + result[2];
+        console.log('ending');
+    }
+
+    function DoRoom() {
+        var debug =  new Room(1, "Debug");
+        var trouble =  new Room(2, "Troubleshot");
+        var javascript = new Room(3, "Javascript");
+        var test =  new Room(4, "Testing");
+        var rooms = [debug, trouble, javascript, test];
+        console.table(rooms);
+
+        console.log('starting');
+        var inputDom = document.getElementById("door");
+        var input = inputDom.value;
+        console.assert('input is not 0', input != 0);
+        var resultDom = document.getElementById("doored");
+        var result = null;
+        rooms.forEach(function (entry) {
+            console.log(entry);
+            if (entry.door == input) {
+                result = entry;
+            }
+        });
+        resultDom.value = result.door + ' ' + result.curse;
+        console.log('ending');
+    }
+
+    String.prototype.shuffle = function () {
+        var a = this.split(""),
+            n = a.length;
+
+        for (var i = n - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var tmp = a[i];
+            a[i] = a[j];
+            a[j] = tmp;
+            console.dir(a);
+        }
+        return a.join("");
+    }
+
+    function Room(door, curse) {
+        this.door = door;
+        this.curse = curse;
+    }
+</script>
