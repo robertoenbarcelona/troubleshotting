@@ -55,7 +55,7 @@
     }
 
     function DoSearch() {
-        var rooms = [[1, "John", "Smith"], [2, "Jane", "Doe"], [3, "Emily", "Jones"], [4, "Pepe", "Manolito"]];
+        var people = [[1, "John", "Smith"], [2, "Jane", "Doe"], [3, "Emily", "Jones"], [4, "Pepe", "Manolito"]];
         console.table(people);
 
         console.log('starting');
@@ -82,7 +82,7 @@
         var javascript = new Room(3, "Javascript");
         var test =  new Room(4, "Testing");
         var rooms = [debug, trouble, javascript, test];
-        console.table(rooms);
+        console.table(rooms, "curse");
 
         console.log('starting');
         var inputDom = document.getElementById("door");
@@ -107,6 +107,7 @@
         var test = new Room(4, "Testing");
         var rooms = [debug, trouble, javascript, test];
         var formacion = { "name" : "Microsoft", "curses" : rooms };
+        console.table(formacion);
         console.dir(formacion);
     }
 

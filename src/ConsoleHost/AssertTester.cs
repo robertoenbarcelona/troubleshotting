@@ -18,6 +18,7 @@ namespace ConsoleHost
         {
             var cryptMessage = new MessageInfo();
             this.CalculateCharOffset(cryptMessage, offsetOption);
+            Debug.WriteIf(cryptMessage.message == null, "La cagaste");
             return cryptMessage.message;
         }
 
@@ -31,6 +32,7 @@ namespace ConsoleHost
             {
                 cryptMessage.message = this.sentence.ToLowerInvariant();
             }
+            Debug.WriteIf(cryptMessage.message == null,"La cagaste");
         }
     }
 }
