@@ -19,7 +19,7 @@ namespace ConsoleHost
             while (limiter != step)
             {
                 phrase.Append('A');
-                limiter += step;
+                //limiter += step;
             }
             return phrase.ToString();
         }

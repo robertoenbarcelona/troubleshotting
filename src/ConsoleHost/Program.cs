@@ -51,6 +51,9 @@ namespace ConsoleHost
                     var uTester = new UnitTester(stepss);
                     Console.WriteLine(uTester.BuildPhrase());
                     break;
+                case "l":
+                    EventLogWriter.WriteLog("Este es un mensaje para el log de eventos de windows", EventLogWriter.LogEvent.AppError);
+                    break;
                 default:
                     break;
             }

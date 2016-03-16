@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="AssertTester.cs" />
     <Compile Include="BreakpointTester.cs" />
+    <Compile Include="EventLogWriter.cs" />
     <Compile Include="ExceptionTester.cs" />
     <Compile Include="MessageInfo.cs" />
     <Compile Include="Program.cs" />
