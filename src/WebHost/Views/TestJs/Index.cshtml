@@ -40,9 +40,15 @@
     <button type="button" onclick="DoInspect()">Go</button>
 </section>
 
+<section>
+    <h2>Log IIS</h2>
+    <form action="LogIIS" method="post">
+        <input type="submit" value="Test exception" />
+    </form>
+</section>
+
 <script>
-    function DoShuffle()
-    {
+    function DoShuffle() {
         console.log('starting');
         debugger;
         var sentenceDom = document.getElementById("sentence");
@@ -66,8 +72,7 @@
         var result = null;
         people.forEach(function (entry) {
             console.log(entry);
-            if (entry[0] == input)
-            {
+            if (entry[0] == input) {
                 result = entry;
             }
         });
@@ -77,10 +82,10 @@
     }
 
     function DoRoom() {
-        var debug =  new Room(1, "Debug");
-        var trouble =  new Room(2, "Troubleshot");
+        var debug = new Room(1, "Debug");
+        var trouble = new Room(2, "Troubleshot");
         var javascript = new Room(3, "Javascript");
-        var test =  new Room(4, "Testing");
+        var test = new Room(4, "Testing");
         var rooms = [debug, trouble, javascript, test];
         console.table(rooms, "curse");
 
@@ -106,7 +111,7 @@
         var javascript = new Room(3, "Javascript");
         var test = new Room(4, "Testing");
         var rooms = [debug, trouble, javascript, test];
-        var formacion = { "name" : "Microsoft", "curses" : rooms };
+        var formacion = { "name": "Microsoft", "curses": rooms };
         console.table(formacion);
         console.dir(formacion);
     }
